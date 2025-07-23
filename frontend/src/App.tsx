@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import SidebarMenu from './components/SidebarMenu';
 import CameraPage from './pages/CameraPage';
 import HistoryPage from './pages/HistoryPage';
+import RegisterPage from "./pages/RegisterPage";
 
 export default function App() {
   const [page, setPage] = useState<'camera' | 'history'>('camera');
@@ -31,7 +32,12 @@ export default function App() {
               path="/history"
               element={<HistoryPage history={history} />}
             />
+            <Route
+              path="/register"
+              element={<RegisterPage />}
+            />
             <Route path="*" element={<Navigate to="/camera" replace />} />
+            <Route path="/register" element={<RegisterPage />} />
           </Routes>
         </main>
       </div>
