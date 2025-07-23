@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Bell, Folder } from 'lucide-react';
+import { Bell, Folder, UserPlus } from 'lucide-react';
 
 export default function SidebarMenu() {
   const linkClasses = (isActive: boolean) =>
@@ -26,6 +26,12 @@ export default function SidebarMenu() {
           >
             <Folder className="w-5 h-5" />
             <span>Historial</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/register" className={({ isActive }) => linkClasses(isActive)}>
+            <UserPlus className="w-5 h-5" />
+            <span>Registrar</span>
           </NavLink>
         </li>
       </ul>
