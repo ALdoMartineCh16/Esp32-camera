@@ -1,6 +1,4 @@
 // src/components/CameraStream.tsx
-import React from 'react';
-
 interface Props {
   streamUrl: string;
 }

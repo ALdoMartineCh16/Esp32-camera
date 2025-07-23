@@ -1,6 +1,5 @@
 // frontend/src/pages/CameraPage.tsx
 import React from "react";
-import type { CameraFeedProps } from "../components/CameraFeed";
 import CameraFeed from "../components/CameraFeed";
 
 type CameraPageProps = {
