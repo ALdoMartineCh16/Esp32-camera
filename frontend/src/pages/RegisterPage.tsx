@@ -7,7 +7,7 @@ export default function RegisterPage() {
   const [photos, setPhotos] = useState<string[]>([]);
   const [msg, setMsg] = useState("");
   const imgRef = useRef<HTMLImageElement | null>(null);
-  const timerRef = useRef<number>();
+  const timerRef = useRef<number |null>(null);
 
   // Polling de la cámara para mostrar vista previa
   const [liveSrc, setLiveSrc] = useState("");
@@ -15,7 +15,11 @@ export default function RegisterPage() {
     timerRef.current = window.setInterval(() => {
       setLiveSrc(`${CAMERA_URL}?t=${Date.now()}`);
     }, 300);
-    return () => window.clearInterval(timerRef.current);
+    return () => {
+        if (timerRef.current !== null) {
+        window.clearInterval(timerRef.current);
+        }
+    };
   }, []);
 
   // Toma foto: añade el dataURL actual al array
